@@ -32,3 +32,16 @@ console.log(arr.filter(moreThanFour));
 
 const isBiggerThanAgain = int => threshold => int > threshold;
 arr.filter(isBiggerThanAgain(4));
+
+const keepGreatestChar = (char1, char2) => char1 > char2 ? char1 : char2;
+// const keepGreatestChar = char1 => char2 => char1 > char2 ? char1 : char2;
+
+// console.log(keepGreatestChar('b','f'));
+// const keepGreatestCharBetweenBAnd = char => keepGreatestChar('b', char);
+// console.log(keepGreatestCharBetweenBAnd('a'));
+
+// const greatestCharInArray = array => array.reduce((acc, char) => acc > char ? acc : char, 'a');
+
+const creduce = (callback, start) => array => array.reduce(callback, start);
+const greatestCharInArray = creduce(keepGreatestChar, 'a');
+console.log(greatestCharInArray(['a','b','c','d']));
