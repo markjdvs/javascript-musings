@@ -66,5 +66,3 @@ const map = f => function*(iterable) {
   for (let x of iterable)
     yield f(x)
 }
-
-//testing git
